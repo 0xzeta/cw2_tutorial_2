@@ -1,8 +1,8 @@
 import urllib2,json,base64
 accesstoken="GBSR8NESEMWDEA15929E"
 institution="10007772"
-page=3
-url="http://data.unistats.ac.uk/api/v4/KIS/Institution/{}/Courses.json?pageIndex={}/statics2".format(
+page=4
+url="http://data.unistats.ac.uk/api/v4/KIS/Institution/{}/Courses.json?pageIndex={}".format(
 	institution,
 	page
 	)
