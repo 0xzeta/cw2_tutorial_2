@@ -14,10 +14,27 @@ request.add_header(
     )
 response = urllib2.urlopen(request)
 data = json.load(response)
-print json.dumps(data,indent=2)
+
+for c in data:
+	if c['Code'] == 'SALARY':
+		d = c['Details']
+		for a in d:
+			if a ['Code'] == "LDMED":
+				print "1.The median salary 6 months after graduation for Software Engineering students from Napier is " + str(a['Value'])
+
+
+
+for c in data:
+	if c['Code'] == 'SALARY':
+		d = c['Details']
+		for a in d:
+			if a ['Code'] == "INSTMED":
+				print "2.The median salary in the sector for software engineering graduates 40 months after gradiuation is " + str(a['Value'])
+
 for c in data:
 	if c['Code'] == 'NSS':
 		d = c['Details']
 		for a in d:
 			if a ['Code'] == "Q1":
-				print a['Value']
+				print "3.The proportion of software engineering students who agree or strongly agree with the statement [Staff are good at explaining things] is " + str(a['Value'])
+
